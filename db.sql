@@ -8,8 +8,8 @@ CREATE TABLE user
 --Criar a tabela de administrador(Robert)
 CREATE TABLE admin
 
---Criar a tebela localidade(GG)
-CREATE TABLE locali
+--Criar a tabela de cliente(GG)
+CREATE TABLE
 
 --Criar a tabela contato(Robert)
 CREATE TABLE cont
