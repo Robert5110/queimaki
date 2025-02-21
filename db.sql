@@ -22,3 +22,5 @@ CREATE TABLE cont
 
 --Criar a tabela de promoção(Luiz)
 CREATE TABLE promo
+
+--
