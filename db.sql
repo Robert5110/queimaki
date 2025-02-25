@@ -1,6 +1,9 @@
---Criar a tabela de administrador (Kauã) concluido
-CREATE TABLE admin(
-id_admin int not null unique primary key,
-nome_admin varchar(255) not null,
-CONSTRAINT fk_user_admin foreign key (id_user) references user(id_user)
+--Criar a tabela de administrador (Luiz) concluido
+CREATE TABLE contatos (
+    id_contato INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    id_forne INT NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    telefone VARCHAR(20),
+    FOREIGN KEY (id_forne) REFERENCES forne(id_forne) ON DELETE CASCADE
 );
