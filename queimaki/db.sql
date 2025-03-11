@@ -50,7 +50,7 @@ FOREIGN KEY (id_categ) REFERENCES catego(id_categ),
 FOREIGN KEY (id_forne) REFERENCES forne(id_forne)
 );
 
---Criar a tabela de fornecedor(GG) concluido
+--Criar a tabela de fornecedor(GG) concluido. 
 create table fornecedor(
     id_forne INT auto_increment PRIMARY KEY UNIQUE NOT NULL,
     nome_forne VARCHAR(255) NOT NULL,
