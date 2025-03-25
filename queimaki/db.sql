@@ -24,7 +24,7 @@ id_user int,
 --Criar a tabela de contato (Luiz) concluido
 CREATE TABLE contatos (
     id_contato INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
-    nome_cont VARCHAR(255) NOT NULL,
+    nome_cont VARCHAR(255) NOT NULL, 
     email_cont VARCHAR(255),
     telefone_cont VARCHAR(50),
     id_forne INT  ,
