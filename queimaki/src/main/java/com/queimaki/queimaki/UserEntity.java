@@ -43,7 +43,7 @@ public class UserEntity implements Serializable {
     @Column(name = "senha_user")
     private String senhaUser; 
 
-    @Column(name = "confirma_senha")
+    @Column(name = "confirma_senha") //
     private String confirmaSenha; 
 
 
