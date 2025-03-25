@@ -1,13 +1,13 @@
-package com.queimaki.queimaki;
+package queimaki.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QueimakiApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QueimakiApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }

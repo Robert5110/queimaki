@@ -1,10 +1,10 @@
-package com.queimaki.queimaki;
+package queimaki.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QueimakiApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
