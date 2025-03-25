@@ -37,7 +37,7 @@ create table categoria(
     nome_categ VARCHAR(255) NOT NULL,
     descricao TEXT
 );
-
+--
 --Criar a tabela produto (Marcelo) concluido
 CREATE TABLE produtos (
 id_produ INT  PRIMARY KEY AUTO_INCREMENT,
