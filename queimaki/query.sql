@@ -35,4 +35,4 @@ JOIN
     produtos_promocoes pp ON p.id_produ = pp.id_produ po
 JOIN
     promocoes pr ON pp.id_promo = pr.id_promo;
-    
+    --
