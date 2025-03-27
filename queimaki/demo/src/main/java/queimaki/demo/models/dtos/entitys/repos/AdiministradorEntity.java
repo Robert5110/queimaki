@@ -1,4 +1,4 @@
-package com.api.springapi.models.entitys;
+package queimaki.demo.models.dtos.entitys;
 
 import java.io.Serializable;
 
@@ -39,6 +39,8 @@ public class AdministradorEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_user")
     private UsersEntity usuario; 
+
+    
 
     public AdministradorEntity() {
     }

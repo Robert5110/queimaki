@@ -46,7 +46,7 @@ descricao_produ varchar(255),
 preco_produ varchar(255) NOT NULL,
 id_categ INT,
 id_forne INT,
-FOREIGN KEY (id_categ) REFERENCES catego(id_categ),
+FOREIGN KEY (id_categ) REFERENCES categoria(id_categ),
 FOREIGN KEY (id_forne) REFERENCES forne(id_forne)
 );
 

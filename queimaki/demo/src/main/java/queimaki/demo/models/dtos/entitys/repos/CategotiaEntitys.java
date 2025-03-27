@@ -15,29 +15,24 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "usuario")
-public class UsuariosEntity implements Serializable {
+@Table(name = "categoria")
+public class CategoriaEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user") 
-    private Long idUser; 
+    @Column(name = "id_categ")
+    private Integer idCateg;
 
-    @Column(name = "nome_user", nullable = false) 
-    private String nomeUser; 
+    @Column(name = "nome_categ", nullable = false)
+    private String nomeCateg;
 
-    @Column(name = "email_user")
-    private String emailUser;
-
-    @Column(name = "senha_user") 
-    private String senhaUser; 
-
-    @Column(name = "confirma_senha") 
-    private String confirmaSenha; 
+    @Column(name = "descricao", columnDefinition = "TEXT")
+    private String descricao;
 
 
-    public UsersEntity() {
-    }
+}
+public class CategotiaEntitys {
+    
 }
