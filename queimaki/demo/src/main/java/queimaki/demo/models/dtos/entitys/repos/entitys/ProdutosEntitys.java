@@ -40,7 +40,7 @@ public class ProdutosEntity implements Serializable {
     private double precoProd;
 
     @ManyToOne
-    @JoinColumn(name = "id_categ") // Nome da coluna na tabela 'usuario' que é a chave estrangeira
+    @JoinColumn(name = "id_categ")
     private RoleEntity categoria;
 
     @JoinColumn(name = "id_forn")
@@ -49,8 +49,6 @@ public class ProdutosEntity implements Serializable {
 
     
 }
-
-
 
 public class ProdutosEntity {
     
