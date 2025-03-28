@@ -16,14 +16,14 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-public class UsuariosEntity implements Serializable {
+public class UsuarioEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user") 
-    private Long idUser; 
+    private Integer idUser;
 
     @Column(name = "nome_user", nullable = false) 
     private String nomeUser; 
@@ -38,6 +38,6 @@ public class UsuariosEntity implements Serializable {
     private String confirmaSenha; 
 
 
-    public UsersEntity() {
+    public UsuarioEntity() {
     }
 }
