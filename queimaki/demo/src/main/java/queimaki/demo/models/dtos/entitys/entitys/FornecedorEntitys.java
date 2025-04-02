@@ -1,4 +1,4 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 
@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "fornecedor")
-public class ForneEntity implements Serializable {
+public class FornecedorEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,13 +32,12 @@ public class ForneEntity implements Serializable {
     private String cnpjForne; 
 
     @Column(name = "email_forne")
-    private String emailUser; 
+    private String emailForne; 
 
     @Column(name = "telefone_forne") //
     private String telefoneForne; 
 
 
-    @ManyToMany
-    private List<CollectrequestEntity> collectrequest;
+
 
 }

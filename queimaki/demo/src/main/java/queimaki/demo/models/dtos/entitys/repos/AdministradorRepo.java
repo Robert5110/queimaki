@@ -1,20 +1,22 @@
 package queimaki.demo.models.dtos.entitys.repos;
 
+import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import queimaki.demo.models.dtos.entitys.Administrador;
+import queimaki.demo.models.dtos.entitys.entitys.AdiministradorEntitys;
 
 @Repository
-public interface AdministradorRepo extends JpaRepository<Administrador, Long> {
+public interface AdministradorRepo extends JpaRepository<AdiministradorEntitys, Long> {
     
-    @Query("SELECT a FROM Administrador a WHERE a.email = ?1")
-    Optional<Administrador> findByEmail(String email);
+    @Query("SELECT a FROM AdministradorEntitys a WHERE a.nome_admin = ?1")
+    AdiministradorEntitys findByNomeAdm(String nomeAdmin);
     
-    @Query("SELECT a FROM Administrador a WHERE a.senha = ?1")
-    Optional<Administrador> findBySenha(String senha);
+    @Query("SELECT a FROM AdministradorEntitys a WHERE a.email_admin = ?1")
+    AdiministradorEntitys findByEmailAdm(String emailAdmin);
     
-    @Query("SELECT a FROM Administrador a WHERE a.email = ?1 AND a.senha = ?2")
-    Optional<Administrador> findByEmailAndSenha(String email, String senha);
+    @Query("SELECT a FROM AdministradorEntitys a WHERE a.senha_admin = ?1")
+    AdiministradorEntitys findBySenhaAdm(String senhaAdmin);
+    
+   
 }

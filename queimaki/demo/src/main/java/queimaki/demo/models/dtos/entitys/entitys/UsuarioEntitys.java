@@ -1,4 +1,4 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 
@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-public class UsuarioEntity implements Serializable {
+public class UsuarioEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,6 +38,6 @@ public class UsuarioEntity implements Serializable {
     private String confirmaSenha; 
 
 
-    public UsuarioEntity() {
+    public UsuarioEntitys() {
     }
 }

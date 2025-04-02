@@ -1,4 +1,4 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 
 @Table(name = "promocoes") 
-public class PromocoesEntity implements Serializable {
+public class PromocoesEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,6 +42,6 @@ public class PromocoesEntity implements Serializable {
     @Column(name = "periodo_fim_promo")
     private LocalDate periodoFimPromo; 
 
-    public PromocoesEntity() {
+    public PromocoesEntitys() {
     }
 }

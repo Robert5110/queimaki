@@ -1,9 +1,6 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
-import java.lang.annotation.Inherited;
-
-import javax.annotation.processing.Generated;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,10 +15,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
+
 @Table(name = "produtos")
-public class ProdutosEntity implements Serializable {
+public class ProdutosEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -36,20 +33,14 @@ public class ProdutosEntity implements Serializable {
     @Column(name = "descricao_produ")
     private String descricaoProd;
 
-    @COLUMN(name = "preco_prod", nullable = false)
+    @Column(name = "preco_prod", nullable = false)
     private double precoProd;
 
     @ManyToOne
     @JoinColumn(name = "id_categ")
-    private RoleEntity categoria;
+    private CategoriaEntitys categoria;
 
+    @ManyToOne
     @JoinColumn(name = "id_forn")
-    private FornecedorEntity fornecedor;
-
-
-    
-}
-
-public class ProdutosEntity {
-    
+    private FornecedorEntitys fornecedor;
 }

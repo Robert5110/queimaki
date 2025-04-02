@@ -1,4 +1,4 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 
@@ -13,10 +13,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
 @Table(name = "categoria")
-public class CategoriaEntity implements Serializable {
+public class CategoriaEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,7 +31,6 @@ public class CategoriaEntity implements Serializable {
     private String descricao;
 
 
-}
-public class CategotiaEntitys {
-    
+    public CategoriaEntitys() {
+    }
 }

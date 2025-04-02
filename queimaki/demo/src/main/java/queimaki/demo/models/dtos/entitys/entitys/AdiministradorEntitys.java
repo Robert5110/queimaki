@@ -1,4 +1,4 @@
-package queimaki.demo.models.dtos.entitys;
+package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 
@@ -18,7 +18,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "administrador")
-public class AdministradorEntity implements Serializable {
+public class AdiministradorEntitys implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,14 +38,11 @@ public class AdministradorEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_user")
-    private UsersEntity usuario; 
+    private UsuarioEntitys usuario; 
 
     
 
-    public AdministradorEntity() {
+    public AdiministradorEntitys() {
     }
 }
 
-public class AdiministradorEntity {
-    
-}
