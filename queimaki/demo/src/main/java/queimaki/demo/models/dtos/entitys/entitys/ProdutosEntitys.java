@@ -24,17 +24,17 @@ public class ProdutosEntitys implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_prod")
-    private long idProd;
+    @Column(name = "id_produ")
+    private long idProdu;
 
-    @Column(name = "nome_prod", nullable = false)
-    private String nomeProd;
+    @Column(name = "nome_produ", nullable = false)
+    private String nomeProdu;
 
     @Column(name = "descricao_produ")
-    private String descricaoProd;
+    private String descricaoProdu;
 
     @Column(name = "preco_prod", nullable = false)
-    private double precoProd;
+    private double precoProdu;
 
     @ManyToOne
     @JoinColumn(name = "id_categ")
@@ -43,4 +43,7 @@ public class ProdutosEntitys implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_forn")
     private FornecedorEntitys fornecedor;
+
+    
 }
+
