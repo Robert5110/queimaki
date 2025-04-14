@@ -30,16 +30,15 @@ public class UsuarioInDto {
 
     }
 
-    public UsuarioInDto(UsuarioDto usuario){
-        this.nomeUser = usuario.getNomeUser();
-        this.emailUser = usuario.getEmailUser();
-        this.senhaUser = usuario.getSenhaUser();
-        this.confirmaSenha = usuario.getConfirmaSenha();
-
+    public UsuarioInDto(UsuarioInDto usuario){
         
-
-
+        if (usuario.getNomeUser() != null) this.nomeUser = usuario.getNomeUser();
+        if (usuario.getEmailUser() != null) this.emailUser = usuario.getEmailUser();
+        if (usuario.getSenhaUser() != null) this.senhaUser = usuario.getSenhaUser();
+        
+            
     }
+
     
 
 

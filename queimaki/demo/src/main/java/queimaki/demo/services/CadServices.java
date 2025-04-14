@@ -1,6 +1,6 @@
 package queimaki.demo.services;
 
-import java.util.Optional;
+//import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import queimaki.demo.models.dtos.entitys.repos.UsuarioRepo;
 
 
 @Service
-public class CadServices {
+public class CadServices{
 
     @Autowired
     private UsuarioRepo usuarioRepo;
@@ -28,82 +28,38 @@ public class CadServices {
      * Description: Cadastra um novo usuário no sistema.
      * Author: Robert
      */
-    public UsuarioEntitys createUsuarios(UsuarioInDto usuario){
+    public UsuarioEntitys createUsuario(UsuarioInDto usuario){
 
-      UsuarioEntitys usuarioEntitys = new UsuarioEntitys(usuario.getNomeUser(),
-         usuario.getEmailUser(),
-          usuario.getSenhaUser(),  
-           usuario.getConfirmaSenha());
-        return usuarioRepo.save(usuarioEntitys);
+        return (ValidateUsuario(usuario.getNomeUser(), usuario.getEmailUser()))
+        ? usuarioRepo.save(new UsuarioEntitys(usuario))
+        : usuarioRepo.findByNomeUserAndEmailUser(usuario.getNomeUser(), usuario.getEmailUser()).get();
+        
+
+
     }
+   
 
     
 
     /* 
-     * Name: [NF002] Update User
+     * Name: [NF002] Validate User
      * Description: Atualiza os dados de um usuário existente no sistema.
      * Author: Robert
      */
-    public UsuarioEntitys updateUsuarios(UsuarioInDto usuario){
-
-        UsuarioEntitys usuarioEntitys = new UsuarioEntitys(usuario.getNomeUser(),
-            usuario.getEmailUser(),
-            usuario.getSenhaUser(),  
-            usuario.getConfirmaSenha());
-        return usuarioRepo.save(usuarioEntitys);
+    public boolean ValidateUsuario(String nomeUser, String emailUser){
+        return usuarioRepo.findByNomeUserAndEmailUser(nomeUser, emailUser).isEmpty();
     }
-
-    /*
-     * Name: [NF003] Delete User
-     * Description: Remove um usuário do sistema.
-     * Author: Robert
-     */
-    public void deleteUsuarios(UsuarioInDto usuario){
-
-        UsuarioEntitys usuarioEntitys = new UsuarioEntitys(usuario.getNomeUser(),
-            usuario.getEmailUser(),
-            usuario.getSenhaUser(),  
-            usuario.getConfirmaSenha());
-        usuarioRepo.delete(usuarioEntitys);
-  }
+  
 
 
 
-
-
-
-
-
-
-
-
-// Login de Administrador
-
-   public Optional<String>LoginAdmin(UsuarioInDto usuario) {
-    String email = usuario.getEmailUser();
-    String senha = usuario.getSenhaUser();
-
-    Optional<UsuarioEntitys> usuarioOptional = usuarioRepo.findByEmailUserAndSenhaUser(email, senha);
-
-    if (usuarioOptional.isPresent()) {
-        return Optional.of("Login realizado com sucesso!");
-    } else {
-        return Optional.empty();
-    }
 }
 
-// Login de Usuário
 
-public Optional<String>LoginUser(UsuarioInDto usuario) {
-    String email = usuario.getEmailUser();
-    String senha = usuario.getSenhaUser();
 
-    Optional<UsuarioEntitys> usuarioOptional = usuarioRepo.findByEmailUserAndSenhaUser(email, senha);
 
-    if (usuarioOptional.isPresent()) {
-        return Optional.of("Login realizado com sucesso!");
-    } else {
-        return Optional.empty();
-    }
-}
-}
+
+
+
+
+

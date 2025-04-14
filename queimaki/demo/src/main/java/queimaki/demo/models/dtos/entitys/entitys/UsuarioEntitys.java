@@ -2,15 +2,15 @@ package queimaki.demo.models.dtos.entitys.entitys;
 
 import java.io.Serializable;
 
+import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
 
 @Getter
 @Setter
@@ -22,9 +22,8 @@ public class UsuarioEntitys implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user") 
-    private Integer idUser;
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    private Long idUser;
 
     @Column(name = "nome_user", nullable = false) 
     private String nomeUser; 
@@ -42,7 +41,7 @@ public class UsuarioEntitys implements Serializable {
     public UsuarioEntitys() {
     }
 
-    public UsuarioEntitys(Integer idUser ,String nomeUser, String emailUser, String senhaUser, String confirmaSenha) {
+    public UsuarioEntitys(Long idUser ,String nomeUser, String emailUser, String senhaUser, String confirmaSenha) {
         if (idUser != null) this.idUser = idUser;
         if (nomeUser != null) this.nomeUser = nomeUser;
         if (emailUser != null) this.emailUser = emailUser;

@@ -43,7 +43,7 @@ public class UsuarioDto {
     }
 
     public UsuarioDto(UsuarioEntitys usuario){
-        if(null != usuario){
+        if(usuario != null) {
             this.idUser = usuario.getIdUser().intValue();
             this.nomeUser = usuario.getNomeUser();
             this.emailUser = usuario.getEmailUser();
