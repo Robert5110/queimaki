@@ -10,16 +10,14 @@ import queimaki.demo.models.dtos.entitys.entitys.FornecedorEntitys;
 public interface FornecedorRepo extends JpaRepository<FornecedorEntitys, Long> {
     
     @Query("SELECT f FROM FornecedorEntitys f WHERE f.nome_Forne = ?1")
-    FornecedorEntitys findByNomeFornecedor(String nomeForne);
+    FornecedorEntitys findByNomeForne(String nomeForne);
 
     @Query("SELECT f FROM FornecedorEntitys f WHERE f.cnpj_forne = ?1")
-    FornecedorEntitys findByCnpj(String cnpjForne);
+    FornecedorEntitys findByCnpjForne(String cnpjForne);
     
     @Query("SELECT f FROM FornecedorEntitys f WHERE f.email_forne = ?1")
-    FornecedorEntitys findByEmailFornecedor(String emailForne);
+    FornecedorEntitys findByEmailForne(String emailForne);
 
-    @Query("SELECT f FROM FornecedorEntitys f WHERE f.telefone_forne = ?1")
-    FornecedorEntitys findByTelefoneFornecedor(String telefoneForne);
 
     
    

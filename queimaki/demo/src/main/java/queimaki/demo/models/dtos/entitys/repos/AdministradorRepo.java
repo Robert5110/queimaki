@@ -10,13 +10,13 @@ import queimaki.demo.models.dtos.entitys.entitys.AdiministradorEntitys;
 public interface AdministradorRepo extends JpaRepository<AdiministradorEntitys, Long> {
     
     @Query("SELECT a FROM AdministradorEntitys a WHERE a.nome_admin = ?1")
-    AdiministradorEntitys findByNomeAdm(String nomeAdmin);
+    AdiministradorEntitys findByNomeAdmin(String nomeAdmin);
     
     @Query("SELECT a FROM AdministradorEntitys a WHERE a.email_admin = ?1")
-    AdiministradorEntitys findByEmailAdm(String emailAdmin);
+    AdiministradorEntitys findByEmailAdmin(String emailAdmin);
     
     @Query("SELECT a FROM AdministradorEntitys a WHERE a.senha_admin = ?1")
-    AdiministradorEntitys findBySenhaAdm(String senhaAdmin);
+    AdiministradorEntitys findBySenhaAdmin(String senhaAdmin);
     
    
 }

@@ -34,8 +34,7 @@ public class FornecedorEntitys implements Serializable {
     @Column(name = "email_forne")
     private String emailForne; 
 
-    @Column(name = "telefone_forne") //
-    private String telefoneForne; 
+
 
 
 

@@ -10,15 +10,15 @@ import queimaki.demo.models.dtos.entitys.entitys.ProdutosEntitys;
 public interface ProdutosRepo extends JpaRepository<ProdutosEntitys, Long> {
     
     @Query("SELECT p FROM ProdutosEntitys p WHERE p.idProd = ?1")
-    ProdutosEntitys findByIdProd(ProdutosEntitys idProdu);
+    ProdutosEntitys findByIdProdu(ProdutosEntitys idProdu);
     
     @Query("SELECT p FROM ProdutosEntitys p WHERE p.nome_Prod = ?1")
-    ProdutosEntitys findByNomeProd(String nomeProdu);
+    ProdutosEntitys findByNomeProdu(String nomeProdu);
     
     @Query("SELECT p FROM ProdutosEntitys p WHERE p.descricao_Produ = ?1")
-    ProdutosEntitys findByDescricaoProd(String descricaoProdu);
+    ProdutosEntitys findByDescricaoProdu(String descricaoProdu);
     
     @Query("SELECT p FROM ProdutosEntitys p WHERE p.preco_Prod = ?1")
-    ProdutosEntitys findByPrecoProd(double precoProdu);
+    ProdutosEntitys findByPrecoProdu(double precoProdu);
     
 }
