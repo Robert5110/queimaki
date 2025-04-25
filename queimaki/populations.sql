@@ -53,4 +53,3 @@ INSERT INTO promocoes (plataforma, tipo_promocao, desconto, periodo_inicio_promo
 INSERT INTO promocoes (plataforma, tipo_promocao, desconto, periodo_inicio_promo, periodo_fim_promo) VALUES ('Loja Online E','Desconto em Produtos','50% de desconto em todos os produtos','2020-05-26','2020-06-10');
 INSERT INTO promocoes (plataforma, tipo_promocao, desconto, periodo_inicio_promo, periodo_fim_promo) VALUES ('Loja Online A','Desconto em Produtos','90% de desconto em todos os produtos','2021-07-16','2021-07-20');
 INSERT INTO promocoes (plataforma, tipo_promocao, desconto, periodo_inicio_promo, periodo_fim_promo) VALUES ('Loja Online E','Desconto em Produtos','50% de desconto em todos os produtos','2020-05-26','2020-06-10');
---
