@@ -1,33 +1,27 @@
 package queimaki.demo.controllers;
 
-//import java.util.Optional;
+import java.util.Optional;
 
-
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//import queimaki.demo.models.dtos.entitys.dtos.LoginDto;
-
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
-//import queimaki.demo.models.dtos.entitys.repos.UsuarioRepo;
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioDto;
-//import queimaki.demo.services.CadServices;
+import queimaki.demo.models.dtos.entitys.dtos.SignUpDto;
+import queimaki.demo.services.AuthService;
 
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 
 @RestController
 @RequestMapping("/api/cad")
 public class CadController{
+
+    @Autowired
+    private AuthService authService;
 
    
 
@@ -38,23 +32,25 @@ public class CadController{
      * Author: Robert
     */
     @GetMapping("/test")
-    public ResponseEntity<String> teste() {
-        return ResponseEntity.ok("Tudo certo!");
-    }  
+    public ResponseEntity<?> test() 
+    {
+        return ResponseEntity.status(202).body("API funcionando corretamente!");
+    }
      /*
      * Name: [RF0021] Signup usuario
      * Description: Method to create a new usuario
      * Author: 
-    
-       @PostMapping("/signupUsuario")
-    public ResponseEntity SignupUsuario(@RequestBody UsuarioInDto usuario ) {
-        Optional<UsuarioDto> newVisitor = cadServices.createUsuario(usuario);
-        return (newVisitor.isEmpty())
-        ?ResponseEntity.status(404).body("Usuario existente")
-        :ResponseEntity.status(202).body(newVisitor.get());
-        
+    */
+@PostMapping("/signup")
+    public ResponseEntity<?> postMethodName(@RequestBody SignUpDto signup) 
+    {
+        Optional<String> response = authService.signUp(signup);
+
+        return (response.get().equals("Usuario cadastrado"))
+        ?ResponseEntity.status(202).body(response.get())
+        :ResponseEntity.status(400).body(response.get());
     }
-*/
+
   
    /* 
     @PostMapping("/loginAdmin")
