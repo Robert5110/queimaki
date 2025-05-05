@@ -77,4 +77,3 @@ CREATE TABLE produtos_promocoes (
     FOREIGN KEY (id_produ) REFERENCES produtos(id_produ),
     FOREIGN KEY (id_promo) REFERENCES promocoes(id_promo)
 );
---
