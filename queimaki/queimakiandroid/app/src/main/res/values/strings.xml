@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">queimakiandroid</string>
+    <string name="editname">pesquisar</string>
+    <string name="nome_user">nome...</string>
+    <string name="email_user">email...</string>
+    <string name="senha_user">senha...</string>
+    <string name="confirma">confirma senha...</string>
+    <string name="nomeEmail">nome ou email...\n</string>
+</resources>

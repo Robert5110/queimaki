@@ -1,71 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center|top"
     android:background="#453E28"
     android:backgroundTint="#00220227"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="448dp"
-        app:srcCompat="@drawable/quiemaki_removebg_preview" />
-
-    <EditText
-        android:id="@+id/Email_field"
-        android:layout_width="299dp"
-        android:layout_height="74dp"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:gravity="bottom"
-        android:hint="@string/user_field"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/senha_field"
-        android:layout_width="299dp"
-        android:layout_height="74dp"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="Senha..."
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/entrar_lb"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:shadowColor="#5A1A1A"
-        android:text="entrar"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#00BCD4"
-        android:textColorHint="#CDDC39"
-        android:textColorLink="#03A9F4"
-        app:rippleColor="#8E4D4D"
-        app:strokeColor="#00BCD4" />
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
+        android:layout_width="560dp"
+        android:layout_height="78dp"
+        android:background="#EA823E"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/cadastro_lb"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/entrar_btn"
+            android:layout_width="173dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Já tenho cadastro"
-            android:textColor="#03A9F4"
-            android:textColorHighlight="#000000"
-            android:textColorHint="#2196F3"
-            android:textColorLink="#03A9F4" />
+            android:background="#6A3131"
+            android:text="entrar"
+            android:textSize="25sp" />
     </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

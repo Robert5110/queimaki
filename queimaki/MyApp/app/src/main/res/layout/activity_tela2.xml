@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onClick"
     tools:context=".Tela2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,21 +19,22 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonAddClick"
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_marginTop="200dp"
-            android:onClick="entrarClicado"
+            android:backgroundTint="#4A4A4A"
+            android:onClick="onClick"
             android:text="BUSCAR"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
+            app:layout_constraintTop_toBottomOf="@+id/onClick"
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/editTextNumberPassword"
+            android:id="@+id/onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="128dp"
@@ -40,6 +42,7 @@
             android:ems="10"
             android:hint="ID"
             android:inputType="numberPassword"
+            android:onClick="onClick"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/imageButton2"
@@ -51,7 +54,7 @@
             android:layout_height="83dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
-            android:onClick="entrarClicado"
+            android:onClick="buttonAddClick"
             android:shadowColor="#0A4E0D"
             android:text="+"
             android:textColor="#60E865"

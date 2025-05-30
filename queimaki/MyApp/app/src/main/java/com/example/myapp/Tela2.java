@@ -1,9 +1,10 @@
 package com.example.myapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Tela2 extends AppCompatActivity {
+
+    private Context context;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +37,19 @@ public class Tela2 extends AppCompatActivity {
         double circ = (2 * 3.14) * area;
         bemvindo.setText("A area do Circulo é: "+ ac +" e a circunferência é: "+ circ);*/
     }
-    public void entrarClicado(View v){
-        Intent ivan = new Intent(this,tela3.class);
-        startActivity(ivan);
+    public void onClick(View v) {
+        Intent intent = new Intent(this, tela3.class);
+            EditText editID = findViewById(R.id.onClick);
+            int id = Integer.parseInt(editID.getText().toString());
+        intent.putExtra("passwordId", id);
+        startActivity(intent);
     }
+
+    public void buttonAddClick(View view) {
+        Intent intent = new Intent(this,tela3.class);
+        startActivity(intent);
+    }
+
+
 }
+

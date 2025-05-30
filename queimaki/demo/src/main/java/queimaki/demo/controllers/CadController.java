@@ -1,27 +1,17 @@
 package queimaki.demo.controllers;
 
 //import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
-
-//import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-//import queimaki.demo.models.dtos.entitys.dtos.LoginDto;
-
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
-//import queimaki.demo.models.dtos.entitys.repos.UsuarioRepo;
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
-//import queimaki.demo.models.dtos.entitys.dtos.UsuarioDto;
-//import queimaki.demo.services.CadServices;
-
-import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-
+import com.demo.dtos.cadastroDto;
+import com.demo.dtos.models.User;
+import com.demo.repos.UsuarioRepo;
 
 
 
@@ -45,30 +35,27 @@ public class CadController{
      * Name: [RF0021] Signup usuario
      * Description: Method to create a new usuario
      * Author: 
-    
-       @PostMapping("/signupUsuario")
-    public ResponseEntity SignupUsuario(@RequestBody UsuarioInDto usuario ) {
-        Optional<UsuarioDto> newVisitor = cadServices.createUsuario(usuario);
-        return (newVisitor.isEmpty())
-        ?ResponseEntity.status(404).body("Usuario existente")
-        :ResponseEntity.status(202).body(newVisitor.get());
-        
+  */
+  @PostMapping("/cadastro")
+    public ResponseEntity<?> cadastroUser(@RequestBody cadastroDto cadastroUser) 
+    {
+        Optional<String> response = cadServices.cadastroUser(cadastroUser);
+
+        return (response.get().equals("Usuario cadastrado"))
+        ?ResponseEntity.status(202).body(response.get())
+        :ResponseEntity.status(400).body(response.get());
     }
-*/
+
+      @PostMapping("/login")
+    public ResponseEntity<?> LoginUser(@RequestBody LoginDto Login)
+    {
+        Optional<String> response = authService.login(Login);
+
+        return (response.get().equals("Login realizado com sucesso"))
+        ?ResponseEntity.status(202).body(response.get())
+        :ResponseEntity.status(400).body(response.get());
+    }
+
   
-   /* 
-    @PostMapping("/loginAdmin")
-    public ResponseEntity postMethodName(@RequestBody LoginDto log) {
-        String response = cadServices.loginAdmin(log).get();
-        return (response.equals("Login realizado com sucesso"))
-        ?ResponseEntity.status(202).body(response)
-        :ResponseEntity.status(404).body(response);
-    }
-    
-
-}
-*/
-
-
 
 }

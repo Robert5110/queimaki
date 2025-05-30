@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".cadastro.presetation.cadastroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:foregroundGravity="left|right"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/voltar_btn"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="voltar para a tela de home"
+            android:onClick="gotoMainActivity"
+            android:padding="20sp"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="298dp"
+        android:layout_height="393dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/quiemaki_removebg_preview__1_" />
+
+    <EditText
+        android:id="@+id/nome_field"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="@string/nome_user"
+        android:inputType="text"
+        android:padding="25sp" />
+
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="@string/email_user"
+        android:inputType="text"
+        android:padding="25sp" />
+
+    <EditText
+        android:id="@+id/senha_field"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="@string/senha_user"
+        android:inputType="textPassword"
+        android:padding="25sp" />
+
+    <EditText
+        android:id="@+id/confrima_field"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="@string/confirma"
+        android:inputType="textPassword"
+        android:padding="25sp"
+        android:password="false" />
+
+    <TextView
+        android:id="@+id/issue_lb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/entrar_field"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="cadastroService"
+        android:text="cadastra" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0000BCD4"
+        android:backgroundTint="#862769B0"
+        android:gravity="center"
+        android:onClick="gotoLoginActivity"
+        android:padding="20sp"
+        android:text="Ja tenho conta"
+        android:textColor="#1E80AC" />
+
+</LinearLayout>

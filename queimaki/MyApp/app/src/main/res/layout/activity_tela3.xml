@@ -21,7 +21,7 @@
             android:id="@+id/imageView6"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:background="#2196F3"
+            android:background="#776A8A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.055"
@@ -34,7 +34,7 @@
             android:id="@+id/imageView7"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:background="#2196F3"
+            android:background="#776A8A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.056"
@@ -47,7 +47,7 @@
             android:id="@+id/imageView8"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:background="#2196F3"
+            android:background="#776A8A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.05"
@@ -60,7 +60,7 @@
             android:id="@+id/imageView10"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:background="#2196F3"
+            android:background="#776A8A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.056"
@@ -73,6 +73,7 @@
             android:id="@+id/button3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#4A4A4A"
             android:onClick="entrarClicado"
             android:text="SALVAR"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +84,7 @@
             app:layout_constraintVertical_bias="0.916" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -96,7 +97,7 @@
             app:layout_constraintVertical_bias="0.183" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/editLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -109,7 +110,7 @@
             app:layout_constraintVertical_bias="0.301" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/editPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -122,7 +123,7 @@
             app:layout_constraintVertical_bias="0.413" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/editNotes"
             android:layout_width="212dp"
             android:layout_height="161dp"
             android:ems="10"
@@ -137,7 +138,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="424dp"
             android:layout_height="73dp"
-            android:background="#650A0A"
+            android:background="#776A8A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
