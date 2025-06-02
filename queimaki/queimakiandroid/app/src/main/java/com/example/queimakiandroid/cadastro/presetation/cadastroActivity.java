@@ -17,19 +17,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.queimakiandroid.R;
-import com.example.queimakiandroid.shared.utils.RetrofitClient;
 import com.example.queimakiandroid.cadastro.data.cadastroData;
-import com.example.queimakiandroid.cadastro.utils.cadastroService;
 import com.example.queimakiandroid.cadastro.utils.cadastroLibs;
 import com.example.queimakiandroid.MainActivity;
 import com.example.queimakiandroid.login.presetation.LoginActivity;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-
-
 
 
 public class cadastroActivity extends AppCompatActivity {
@@ -55,7 +46,7 @@ public class cadastroActivity extends AppCompatActivity {
             return insets;
         });
 
-        nome_field = findViewById(R.id.nome_field);
+        nome_field = findViewById(R.id.nomeOrmail_field);
         email_field = findViewById(R.id.email_field);
         senha_filed = findViewById(R.id.senha_field);
         confirma_field = findViewById(R.id.confrima_field);

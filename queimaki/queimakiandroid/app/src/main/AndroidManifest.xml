@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Queimakiandroid"
         tools:targetApi="31">
         <activity
+            android:name=".categorias.categoriaActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.presetation.LoginActivity"
             android:exported="false" />
         <activity

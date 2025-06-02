@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/quiemaki_removebg_preview__1_" />
 
     <EditText
-        android:id="@+id/nome_field"
+        android:id="@+id/nomeOrmail_field"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
