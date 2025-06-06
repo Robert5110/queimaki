@@ -1,5 +1,4 @@
 package queimaki.demo.services;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,10 +8,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.demo.dtos.cadastradoDto;
-import com.demo.dtos.LoginDto;
-import com.api.api.models.User;
-import com.api.api.repository.UserRepository;
+import queimaki.demo.dtos.ResponseModel;
+import queimaki.demo.dtos.LoginDto;
+import queimaki.demo.dtos.CadastroDto;
+import queimaki.demo.entitys.entitys.UsuarioEntitys;
+import queimaki.demo.repository.UserRepository;
+
 
 @Service
 public class AuthService {
@@ -21,42 +22,69 @@ public class AuthService {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserRepository userRepo;
+    private UserRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
-    public Optional<String> login(LoginDto login)
+    // Método para Logar o usuário
+    public ResponseModel login(LoginDto login)
     {
-        Authentication authentication = authenticationManager.authenticate(
-        new UsernamePasswordAuthenticationToken(
-            signIn.getUserOrEmail(), 
-            signIn.getSenha()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        System.out.println(authentication);
-        return Optional.of("Login realizado com sucesso");
-    }
-
-    public Optional<String> cadastro(cadastroDto cadastro)
-    {
-        try 
+        ResponseModel response = new ResponseModel();
+        try
         {
-            if(userRepo.existsByNome(signUp.getNome())) return Optional.of("Nome de usuario já Existente");
-            if(userRepo.existsByEmail(signUp.getEmail())) return Optional.of("Email já Existente");
+            if(!userRepository.existsByName(login.getNomeUserOremailUser()) && !userRepository.existsByEmail(login.getNomeUserOremailUser())) {
+                response.setMessage("Usuario ou Email não encontrado");
+                response.setStatus(404);
+                return response;
+            }
+            Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                      login.getNomeUserOremailUser(), 
+                      login.getSenhaUser()));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            response.setMessage("Login realizado com sucesso");
+            response.setStatus(200);
+            return response;
 
-            User newUser = new User();
-            newUser.setNome(signUp.getNome());
-            newUser.setEmail(signUp.getEmail());
-            newUser.setSenha(passwordEncoder.encode(signUp.getSenha()));
-
-            userRepo.save(newUser);
-            return Optional.of("Usuario cadastrado");
         }
         catch (Exception e)
         {
-            throw new RuntimeException("Erro ao armazenar usuario", e);
+            response.setMessage("Erro ao logar usuario: " + e.getMessage());
+            response.setStatus(500);
+            return response;
+        } 
+    }
+
+    public ResponseModel cadastro(CadastroDto cadastroDto)
+    {
+        ResponseModel response = new ResponseModel();
+        try 
+        {
+            if(userRepository.existsByName(cadastroDto.getNomeUser()) || 
+               userRepository.existsByEmail(cadastroDto.getEmailUser()))
+            {
+                response.setMessage("Usuario ou Email já cadastrado");
+                response.setStatus(409);
+                return response;
+            }
+
+            UsuarioEntitys newUser = new UsuarioEntitys();
+            newUser.setNomeUser(cadastroDto.getNomeUser());
+            newUser.setEmailUser(cadastroDto.getEmailUser());
+            newUser.setSenhaUser(passwordEncoder.encode(cadastroDto.getSenhaUser()));
+            userRepository.save(newUser);
+            response.setMessage("Usuario cadastrado");
+            response.setStatus(200);
+            return response;
+        }
+        catch (Exception e)
+        {
+            response.setStatus(500);
+            response.setMessage("Erro ao cadastrar usuario: " + e.getMessage());
+            return response;
         }
     }
 
 }
+

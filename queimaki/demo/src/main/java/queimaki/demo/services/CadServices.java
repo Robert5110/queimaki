@@ -5,10 +5,9 @@ package queimaki.demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//Usuario
-import queimaki.demo.models.dtos.entitys.dtos.UsuarioInDto;
-import queimaki.demo.models.dtos.entitys.entitys.UsuarioEntitys;
-import queimaki.demo.models.dtos.entitys.repos.UsuarioRepo;
+import queimaki.demo.dtos.UsuarioInDto;
+import queimaki.demo.entitys.entitys.UsuarioEntitys;
+import queimaki.demo.entitys.repos.UsuarioRepo;
 
 //Produtos
 

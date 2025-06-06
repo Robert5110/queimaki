@@ -7,10 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.queimakiandroid.R;
 
+
 public class homeActivity extends AppCompatActivity {
+    private RecyclerView projetosRv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +27,8 @@ public class homeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        projetosRv = findViewById(R.id.comprars_rv);
+        projetosRv.setLayoutManager(new LinearLayoutManager(this));
+        projetosRv.setHasFixedSize(true);
     }
 }

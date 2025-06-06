@@ -1,61 +1,48 @@
 package queimaki.demo.controllers;
 
-//import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.dtos.cadastroDto;
-import com.demo.dtos.models.User;
-import com.demo.repos.UsuarioRepo;
-
-
+import queimaki.demo.services.AuthService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import queimaki.demo.dtos.ResponseModel;
+import queimaki.demo.dtos.LoginDto;
+import queimaki.demo.dtos.CadastroDto;
 
 @RestController
 @RequestMapping("/api/cad")
 public class CadController{
 
-   
+    @Autowired
+    private AuthService authService;
 
-
-   
     /* Name: [RF000] Test
      * Description: Testa o funcionamento do sistema.
      * Author: Robert
     */
+
     @GetMapping("/test")
-    public ResponseEntity<String> teste() {
-        return ResponseEntity.ok("Tudo certo!");
-    }  
-     /*
-     * Name: [RF0021] Signup usuario
-     * Description: Method to create a new usuario
-     * Author: 
-  */
-  @PostMapping("/cadastro")
-    public ResponseEntity<?> cadastroUser(@RequestBody cadastroDto cadastroUser) 
+    public ResponseEntity<?> test() 
     {
-        Optional<String> response = cadServices.cadastroUser(cadastroUser);
-
-        return (response.get().equals("Usuario cadastrado"))
-        ?ResponseEntity.status(202).body(response.get())
-        :ResponseEntity.status(400).body(response.get());
+        return ResponseEntity.status(200).body("Api esta funcional");
     }
 
-      @PostMapping("/login")
-    public ResponseEntity<?> LoginUser(@RequestBody LoginDto Login)
+    @PostMapping("/cadastro")
+    public ResponseEntity<ResponseModel> signUpUser(@RequestBody CadastroDto Cadastro) 
     {
-        Optional<String> response = authService.login(Login);
-
-        return (response.get().equals("Login realizado com sucesso"))
-        ?ResponseEntity.status(202).body(response.get())
-        :ResponseEntity.status(400).body(response.get());
+        ResponseModel responseDto = authService.cadastro(Cadastro);
+        return ResponseEntity.status(responseDto.getStatus()).body(responseDto);
     }
 
-  
+    @PostMapping("/login")
+    public ResponseEntity<ResponseModel> signInUser(@RequestBody LoginDto login)
+    {           
+        ResponseModel responseDto = authService.Login(login);
+        return ResponseEntity.status(responseDto.getStatus()).body(responseDto);
+    }
 
 }
