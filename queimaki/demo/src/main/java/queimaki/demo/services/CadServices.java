@@ -28,24 +28,18 @@ public class CadServices{
      * Author: Robert
      */
     public UsuarioEntitys createUsuario(UsuarioInDto usuario){
-
-        return (ValidateUsuario(usuario.getNomeUser(), usuario.getEmailUser()))
-        ? usuarioRepo.save(new UsuarioEntitys(usuario))
-        : usuarioRepo.findByNomeUserAndEmailUser(usuario.getNomeUser(), usuario.getEmailUser()).get();
-        
-
-
+        // Se não existe, salva novo usuário. Se existe, retorna o existente.
+        return (usuarioNaoExiste(usuario.getNomeUser(), usuario.getEmailUser()))
+            ? usuarioRepo.save(new UsuarioEntitys(usuario))
+            : usuarioRepo.findByNomeUserAndEmailUser(usuario.getNomeUser(), usuario.getEmailUser()).get();
     }
-   
-
-    
 
     /* 
-     * Name: [NF002] Validate User
-     * Description: Atualiza os dados de um usuário existente no sistema.
+     * Name: [NF002] Verifica se usuário NÃO existe
+     * Description: Retorna true se não existe usuário com nome e email.
      * Author: Robert
      */
-    public boolean ValidateUsuario(String nomeUser, String emailUser){
+    public boolean usuarioNaoExiste(String nomeUser, String emailUser){
         return usuarioRepo.findByNomeUserAndEmailUser(nomeUser, emailUser).isEmpty();
     }
   

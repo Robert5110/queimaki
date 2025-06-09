@@ -41,7 +41,7 @@ public class CadController{
     @PostMapping("/login")
     public ResponseEntity<ResponseModel> signInUser(@RequestBody LoginDto login)
     {           
-        ResponseModel responseDto = authService.Login(login);
+        ResponseModel responseDto = authService.login(login);
         return ResponseEntity.status(responseDto.getStatus()).body(responseDto);
     }
 
