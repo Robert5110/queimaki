@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Queimakiandroid"
         tools:targetApi="31">
         <activity
+            android:name=".home"
+            android:exported="false" />
+        <activity
             android:name=".homerUser.presetation.produtosF"
             android:exported="false" />
         <activity
