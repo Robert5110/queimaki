@@ -1,4 +1,4 @@
-package com.example.queimakiandroid;
+package com.example.queimakiandroid.homerUser.presetation;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.queimakiandroid.R;
 
 public class home extends AppCompatActivity {
 
