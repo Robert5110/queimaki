@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">queimakiandroid</string>
+    <string name="confirma">confirma senha...</string>
+    <string name="editname">pesquisar</string>
+    <string name="email_user">email...</string>
+    <string name="nomeEmail">nome ou email...\n</string>
+    <string name="nome_user">nome...</string>
+    <string name="senha_user">senha...</string>
+    <style name="Base.Theme.Queimakiandroid" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Queimakiandroid" parent="Base.Theme.Queimakiandroid"/>
+</resources>
