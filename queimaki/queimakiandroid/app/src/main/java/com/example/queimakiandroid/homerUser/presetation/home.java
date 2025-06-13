@@ -1,6 +1,8 @@
 package com.example.queimakiandroid.homerUser.presetation;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,12 @@ public class home extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        Button produtosBtn = findViewById(R.id.produtos_btn);
+        Button comprasBtn = findViewById(R.id.compras_btn);
+        produtosBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { renderFragment(new produtosF());}
         });
     }
 }
