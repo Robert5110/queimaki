@@ -31,4 +31,7 @@ public class home extends AppCompatActivity {
             public void onClick(View v) { renderFragment(new produtosF());}
         });
     }
+
+    private void renderFragment(produtosF produtosF) {
+    }
 }
